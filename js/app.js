@@ -23,7 +23,6 @@ const errorScreen = () => {
     errorMsg.classList.remove('hideme');
     moviesContainer.classList.remove('hideme');
 
-
     initialMsg.classList.add('hideme');
     moviesContainer.classList.add('hideme');
 }

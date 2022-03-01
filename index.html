@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Watchlist</title>
+
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    
+    <div class="container">
+        <div class="header">
+            <div class="header-contents">
+                <div class="title"><h1>Find your film</h1></div>
+                <div class="watchlist">
+                    <a href="./watchlist.html">My Watchlist</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="searcbar">
+            <!-- Searchbar with search icon and button -->
+            <form action="" method="GET" class="search-form" id="searchmovies">
+                <div class="input-container">
+                    <div class="search-icon">
+                        <img src="./images/search-icon.png" alt="search-icon" width="20" height="20" style="width:20px;height:20px;">
+                    </div>
+                    <input type="search" name="search" placeholder="Search..." autocomplete="off" id="movieinput">
+                </div>
+                <button type="submit" name="submit">Search</button>
+            </form>
+        </div>
+
+        <div class="start-exploring hideme" id="initialmsg">
+            <div class="initial-screen">
+                <img src="./images/start-exploring.png" width="70" alt="" style="width: 70px;">
+                <div class="info-txt">Start exploring</div>
+            </div>
+        </div>
+        
+        <div class="error-msg hideme" id="errormsg">
+            <div class="error-msg" id="displayerror">
+                Unable to find what you’re looking for. Please try another search.
+            </div>
+        </div>
+
+        <div class="movies-container" id="moviescontainer">
+        </div>
+    </div>
+
+
+    <script src="./js/app.js"></script>
+</body>
+</html>

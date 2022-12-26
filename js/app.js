@@ -1,3 +1,5 @@
+import OMDB_API_KEY from './apikey.js';
+
 const formSubmit = document.getElementById('searchmovies');
 const searchInput = document.getElementById('movieinput');
 
@@ -65,7 +67,7 @@ const fetchMovies = async (e) => {
             errorScreen();
         }
     } catch (error) {
-        console.log(error.message);
+        // console.log(error.message);
         displayErrorMsg.textContent = "Unable to find what you’re looking for. Please try another search!!";
         errorScreen();
     }
@@ -79,7 +81,7 @@ const fetchIDs = async (api, id) => {
 
     moviesContainer.innerHTML += renderMovies(dataIDs);
 
-    console.log(dataIDs);
+    // console.log(dataIDs);
 
 }
 

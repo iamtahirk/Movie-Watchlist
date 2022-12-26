@@ -1,10 +1,12 @@
+import OMDB_API_KEY from './apikey.js';
+
 const emptyWatchList = document.getElementById('emptymsgcontainer');
 const movieContainer = document.getElementById('moviescontainer');
 
 const renderStoredMovies = () => {
     let localMovies = JSON.parse(localStorage.getItem('movieIDs'));
     for (let i = 0; i < localMovies.length; i++) {
-        console.log(localMovies[i]);
+        // console.log(localMovies[i]);
         fetchMovies(localMovies[i]);
     }
 }

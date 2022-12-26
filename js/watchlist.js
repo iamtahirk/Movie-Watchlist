@@ -1,5 +1,3 @@
-import OMDb_API_KEY from './apikey.js';
-
 const emptyWatchList = document.getElementById('emptymsgcontainer');
 const movieContainer = document.getElementById('moviescontainer');
 
@@ -13,7 +11,7 @@ const renderStoredMovies = () => {
 
 const fetchMovies = async (id) => {
     // Make sure to import your API Key
-    const response = await fetch (`http://www.omdbapi.com/?apiKey=${OMDb_API_KEY}&i=${id}`);
+    const response = await fetch (`http://www.omdbapi.com/?apiKey=${OMDB_API_KEY}&i=${id}`);
     const data = await response.json();
     movieContainer.innerHTML += renderMovies(data);
 }

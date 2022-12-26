@@ -1,5 +1,3 @@
-import OMDb_API_KEY from './apikey.js';
-
 const formSubmit = document.getElementById('searchmovies');
 const searchInput = document.getElementById('movieinput');
 

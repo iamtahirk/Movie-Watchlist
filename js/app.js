@@ -44,8 +44,7 @@ startScreen();
 const fetchMovies = async (e) => {
     e.preventDefault();
 
-    // Put your API Key
-    // const apiKey = "";
+    // Make sure to import your API Key
     const searchedMovie = searchInput.value;
     try {
         if (searchedMovie)  {

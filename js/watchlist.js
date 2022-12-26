@@ -5,7 +5,6 @@ const movieContainer = document.getElementById('moviescontainer');
 
 const renderStoredMovies = () => {
     let localMovies = JSON.parse(localStorage.getItem('movieIDs'));
-
     for (let i = 0; i < localMovies.length; i++) {
         console.log(localMovies[i]);
         fetchMovies(localMovies[i]);
@@ -13,11 +12,9 @@ const renderStoredMovies = () => {
 }
 
 const fetchMovies = async (id) => {
-    // Put your API Key
-    // const apiKey = "";
+    // Make sure to import your API Key
     const response = await fetch (`http://www.omdbapi.com/?apiKey=${OMDb_API_KEY}&i=${id}`);
     const data = await response.json();
-
     movieContainer.innerHTML += renderMovies(data);
 }
 
@@ -25,7 +22,6 @@ const renderMovies = (movie) => {
     let movieposter = chkPoster(movie);
     let movieplot = chkPlot(movie);
     let movieID = movie.imdbID;
-
     return renderHTML(movie, movieposter, movieplot, movieID);
 }
 

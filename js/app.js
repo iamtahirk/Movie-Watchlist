@@ -1,3 +1,5 @@
+import OMDb_API_KEY from './apikey.js';
+
 const formSubmit = document.getElementById('searchmovies');
 const searchInput = document.getElementById('movieinput');
 
@@ -43,12 +45,12 @@ const fetchMovies = async (e) => {
     e.preventDefault();
 
     // Put your API Key
-    const apiKey = "";
+    // const apiKey = "";
     const searchedMovie = searchInput.value;
     try {
         if (searchedMovie)  {
             moviesContainer.innerHTML = '';
-            const response = await fetch (`http://www.omdbapi.com/?apiKey=${apiKey}&s=${searchedMovie}`);
+            const response = await fetch (`http://www.omdbapi.com/?apiKey=${OMDb_API_KEY}&s=${searchedMovie}`);
             const data = await response.json();
             
             if (data.Error === 'Movie not found!') {
@@ -58,7 +60,7 @@ const fetchMovies = async (e) => {
                 moviesList();
     
                 data.Search.forEach(element => {
-                    fetchIDs(apiKey, element.imdbID);
+                    fetchIDs(OMDb_API_KEY, element.imdbID);
                 });
             }
         } else {

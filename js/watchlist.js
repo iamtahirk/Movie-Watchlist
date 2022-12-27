@@ -67,10 +67,9 @@ const renderHTML = (movie, poster, plot, id) => {
                         </div>
 
                         <div class="addwatchlist">
-                            <button class="add-watchlist" id="removewatchlist" onclick="removeFromWatchlist('${id}')"><img src="./images/remove-icon.png" width="16" height="16" style="width: 16px; height: 16px;">Remove</button>
+                            <button class="add-watchlist" id="removewatchlist"  data-removemovie=${id}><img src="./images/remove-icon.png" width="16" height="16" style="width: 16px; height: 16px;">Remove</button>
                         </div>
                     </div>
-
                     ${plot}
                 </div>
             </div>`;
@@ -91,6 +90,12 @@ const removeFromWatchlist = (id) => {
     localStorage.setItem('movieIDs', JSON.stringify(movies));
     location.reload();
 }
+
+document.addEventListener('click', function(e){
+    if(e.target.dataset.removemovie){
+        removeFromWatchlist(e.target.dataset.removemovie) 
+    }
+})
 
 const init = () => {
     if(JSON.parse(localStorage.getItem('movieIDs')).length <= 0 || localStorage.getItem('movieIDs') == null) {

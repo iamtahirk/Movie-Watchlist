@@ -80,9 +80,6 @@ const fetchIDs = async (api, id) => {
     const dataIDs = await responseIDs.json();
 
     moviesContainer.innerHTML += renderMovies(dataIDs);
-
-    // console.log(dataIDs);
-
 }
 
 // Render Movies
@@ -169,7 +166,7 @@ const chkIfMovieStored = (id) => {
             return `<img src="./images/checked.png" width="16" height="16" style="width: 16px; height: 16px;"> Added`
         }
     }
-    return `<button class="add-watchlist" id="addwatchlist" onclick="addToWatchlist(this.parentElement,'${id}')"><img src="./images/add-icon.png" width="16" height="16" style="width: 16px; height: 16px;">Watchlist</button>`;
+    return `<button class="add-watchlist" id="addwatchlist" data-movieid=${id}><img src="./images/add-icon.png" width="16" height="16" style="width: 16px; height: 16px;">Watchlist</button>`;
 }
 
 // Check for localStorage key, set it if empty
@@ -178,5 +175,13 @@ const chkLocalStorageNotEmpty = () => {
         localStorage.setItem('movieIDs', '[]');
     }
 }
+
+document.addEventListener('click', function(e){
+    if(e.target.dataset.movieid){
+        // console.log(e.target.dataset.movieid, e.target.parentElement)
+        addToWatchlist(e.target.parentElement,e.target.dataset.movieid) 
+    }
+})
+
 
 formSubmit.addEventListener('submit', fetchMovies);

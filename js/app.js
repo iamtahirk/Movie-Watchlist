@@ -49,7 +49,7 @@ const fetchMovies = async (e) => {
     try {
         if (searchedMovie)  {
             moviesContainer.innerHTML = '';
-            const response = await fetch (`http://www.omdbapi.com/?apiKey=${OMDB_API_KEY}&s=${searchedMovie}`);
+            const response = await fetch (`https://www.omdbapi.com/?apiKey=${OMDB_API_KEY}&s=${searchedMovie}`);
             const data = await response.json();
             
             if (data.Error === 'Movie not found!') {
@@ -76,7 +76,7 @@ const fetchMovies = async (e) => {
 }
 
 const fetchIDs = async (api, id) => {
-    const responseIDs = await fetch (`http://www.omdbapi.com/?apiKey=${api}&i=${id}`);
+    const responseIDs = await fetch (`https://www.omdbapi.com/?apiKey=${api}&i=${id}`);
     const dataIDs = await responseIDs.json();
 
     moviesContainer.innerHTML += renderMovies(dataIDs);

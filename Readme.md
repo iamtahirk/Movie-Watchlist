@@ -2,7 +2,7 @@
 
 ##### Add movies to your watchlist.
 
-Add movies to your watchlist which are fetched using [OMDb API](https://www.omdbapi.com/).
+Add movies to your watchlist which are fetched using [OMDB API](https://www.omdbapi.com/).
 
 You can easily add any movie to your watchlist which will be stored in local storage.
 
